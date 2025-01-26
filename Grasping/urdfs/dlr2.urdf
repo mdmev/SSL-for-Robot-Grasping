@@ -1,0 +1,531 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<robot name="hand">
+  <link name="hand_base">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/full_hand_base_power_nosphere.obj"/>
+      </geometry>
+      <material name="hand_grey"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/full_hand_base_power_nosphere.obj"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="ringfinger_base_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="ringfinger_proximal_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="ringfinger_knuckle_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/finger_prox.stl"/>
+      </geometry>
+      <material name="hand_yellow"/>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/finger_prox.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="ringfinger_middle_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.075"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/finger_med.stl"/>
+      </geometry>
+      <material name="hand_yellow"/>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/finger_med.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="ringfinger_distal_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.025"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/finger_dist_cut_rot.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="hand_yellow"/>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/finger_dist_cut_rot.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="ringfinger_virtual_distal_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="middlefinger_base_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="middlefinger_proximal_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="middlefinger_knuckle_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/finger_prox.stl"/>
+      </geometry>
+      <material name="hand_red"/>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/finger_prox.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="middlefinger_middle_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.075"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/finger_med.stl"/>
+      </geometry>
+      <material name="hand_red"/>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/finger_med.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="middlefinger_distal_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.025"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/finger_dist_cut_rot.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="hand_red"/>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/finger_dist_cut_rot.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="middlefinger_virtual_distal_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="forefinger_base_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="forefinger_proximal_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="forefinger_knuckle_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/finger_prox.stl"/>
+      </geometry>
+      <material name="hand_green"/>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/finger_prox.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="forefinger_middle_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.075"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/finger_med.stl"/>
+      </geometry>
+      <material name="hand_green"/>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/finger_med.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="forefinger_distal_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.025"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/finger_dist_cut_rot.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="hand_green"/>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/finger_dist_cut_rot.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="forefinger_virtual_distal_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="thumb_base_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="thumb_proximal_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="thumb_knuckle_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/finger_prox.stl"/>
+      </geometry>
+      <material name="hand_blue"/>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/finger_prox.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="thumb_middle_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.075"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/finger_med.stl"/>
+      </geometry>
+      <material name="hand_blue"/>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/finger_med.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="thumb_distal_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.025"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/finger_dist_cut_rot.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="hand_blue"/>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/finger_dist_cut_rot.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="thumb_virtual_distal_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <joint name="ringfinger_base_transformation_fixed" type="fixed">
+    <parent link="hand_base"/>
+    <child link="ringfinger_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="-0.042706994 -0.058843152 0.127808675" rpy="-0.23069517568612555 -1.398817179145397 -2.7612295098394055"/>
+  </joint>
+  <joint name="ringfinger_proximal_joint" type="revolute">
+    <limit effort="1000.0" velocity="1000.0" lower="-0.5235987755982988" upper="0.5235987755982988"/>
+    <parent link="ringfinger_base_link"/>
+    <child link="ringfinger_proximal_link"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.0 -0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="ringfinger_knuckle_joint" type="revolute">
+    <limit effort="1000.0" velocity="1000.0" lower="-0.3490658503988659" upper="1.5009831567151235"/>
+    <parent link="ringfinger_proximal_link"/>
+    <child link="ringfinger_knuckle_link"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.0 -0.0 0.0" rpy="1.5707963267948966 -0.0 0.0"/>
+  </joint>
+  <joint name="ringfinger_middle_joint" type="revolute">
+    <limit effort="1000.0" velocity="1000.0" lower="-0.17453292519943295" upper="1.8325957145940461"/>
+    <parent link="ringfinger_knuckle_link"/>
+    <child link="ringfinger_middle_link"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.075 -0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="ringfinger_distal_joint_passive" type="revolute">
+    <limit effort="1000.0" velocity="1000.0" lower="-0.17453292519943295" upper="1.8325957145940461"/>
+    <parent link="ringfinger_middle_link"/>
+    <child link="ringfinger_distal_link"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.04 -0.0 0.0" rpy="0.0 0.0 -1.5707963267948966"/>
+  </joint>
+  <joint name="ringfinger_virtual_distal_joint_fixed" type="fixed">
+    <parent link="ringfinger_distal_link"/>
+    <child link="ringfinger_virtual_distal_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="middlefinger_base_transformation_fixed" type="fixed">
+    <parent link="hand_base"/>
+    <child link="middlefinger_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="-0.048151365 -0.012101809 0.133300263" rpy="-0.38464095936834725 -1.337289794013638 -2.708519622653562"/>
+  </joint>
+  <joint name="middlefinger_proximal_joint" type="revolute">
+    <limit effort="1000.0" velocity="1000.0" lower="-0.5235987755982988" upper="0.5235987755982988"/>
+    <parent link="middlefinger_base_link"/>
+    <child link="middlefinger_proximal_link"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.0 -0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="middlefinger_knuckle_joint" type="revolute">
+    <limit effort="1000.0" velocity="1000.0" lower="-0.3490658503988659" upper="1.5009831567151235"/>
+    <parent link="middlefinger_proximal_link"/>
+    <child link="middlefinger_knuckle_link"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.0 -0.0 0.0" rpy="1.5707963267948966 -0.0 0.0"/>
+  </joint>
+  <joint name="middlefinger_middle_joint" type="revolute">
+    <limit effort="1000.0" velocity="1000.0" lower="-0.17453292519943295" upper="1.8325957145940461"/>
+    <parent link="middlefinger_knuckle_link"/>
+    <child link="middlefinger_middle_link"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.075 -0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="middlefinger_distal_joint_passive" type="revolute">
+    <limit effort="1000.0" velocity="1000.0" lower="-0.17453292519943295" upper="1.8325957145940461"/>
+    <parent link="middlefinger_middle_link"/>
+    <child link="middlefinger_distal_link"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.04 -0.0 0.0" rpy="0.0 0.0 -1.5707963267948966"/>
+  </joint>
+  <joint name="middlefinger_virtual_distal_joint_fixed" type="fixed">
+    <parent link="middlefinger_distal_link"/>
+    <child link="middlefinger_virtual_distal_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="forefinger_base_transformation_fixed" type="fixed">
+    <parent link="hand_base"/>
+    <child link="forefinger_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="-0.045982316 0.027691585 0.138843566" rpy="-0.38464095936834725 -1.337289794013638 -2.708519622653562"/>
+  </joint>
+  <joint name="forefinger_proximal_joint" type="revolute">
+    <limit effort="1000.0" velocity="1000.0" lower="-0.5235987755982988" upper="0.5235987755982988"/>
+    <parent link="forefinger_base_link"/>
+    <child link="forefinger_proximal_link"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.0 -0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="forefinger_knuckle_joint" type="revolute">
+    <limit effort="1000.0" velocity="1000.0" lower="-0.3490658503988659" upper="1.5009831567151235"/>
+    <parent link="forefinger_proximal_link"/>
+    <child link="forefinger_knuckle_link"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.0 -0.0 0.0" rpy="1.5707963267948966 -0.0 0.0"/>
+  </joint>
+  <joint name="forefinger_middle_joint" type="revolute">
+    <limit effort="1000.0" velocity="1000.0" lower="-0.17453292519943295" upper="1.8325957145940461"/>
+    <parent link="forefinger_knuckle_link"/>
+    <child link="forefinger_middle_link"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.075 -0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="forefinger_distal_joint_passive" type="revolute">
+    <limit effort="1000.0" velocity="1000.0" lower="-0.17453292519943295" upper="1.8325957145940461"/>
+    <parent link="forefinger_middle_link"/>
+    <child link="forefinger_distal_link"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.04 -0.0 0.0" rpy="0.0 0.0 -1.5707963267948966"/>
+  </joint>
+  <joint name="forefinger_virtual_distal_joint_fixed" type="fixed">
+    <parent link="forefinger_distal_link"/>
+    <child link="forefinger_virtual_distal_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="thumb_base_transformation_fixed" type="fixed">
+    <parent link="hand_base"/>
+    <child link="thumb_base_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.054208442 0.041554306 0.100969167" rpy="0.1831822312812139 -0.9911948796858158 -0.037995938272615944"/>
+  </joint>
+  <joint name="thumb_proximal_joint" type="revolute">
+    <limit effort="1000.0" velocity="1000.0" lower="-0.5235987755982988" upper="0.5235987755982988"/>
+    <parent link="thumb_base_link"/>
+    <child link="thumb_proximal_link"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.0 -0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="thumb_knuckle_joint" type="revolute">
+    <limit effort="1000.0" velocity="1000.0" lower="-0.3490658503988659" upper="1.5009831567151235"/>
+    <parent link="thumb_proximal_link"/>
+    <child link="thumb_knuckle_link"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.0 -0.0 0.0" rpy="1.5707963267948966 -0.0 0.0"/>
+  </joint>
+  <joint name="thumb_middle_joint" type="revolute">
+    <limit effort="1000.0" velocity="1000.0" lower="-0.17453292519943295" upper="1.8325957145940461"/>
+    <parent link="thumb_knuckle_link"/>
+    <child link="thumb_middle_link"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.075 -0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="thumb_distal_joint_passive" type="revolute">
+    <limit effort="1000.0" velocity="1000.0" lower="-0.17453292519943295" upper="1.8325957145940461"/>
+    <parent link="thumb_middle_link"/>
+    <child link="thumb_distal_link"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.04 -0.0 0.0" rpy="0.0 0.0 -1.5707963267948966"/>
+  </joint>
+  <joint name="thumb_virtual_distal_joint_fixed" type="fixed">
+    <parent link="thumb_distal_link"/>
+    <child link="thumb_virtual_distal_link"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <material name="base_and_dock_material">
+    <color rgba="0.  0.  0.5 1. "/>
+  </material>
+  <material name="hand_red">
+    <color rgba="1. 0. 0. 1."/>
+  </material>
+  <material name="hand_blue">
+    <color rgba="0. 0. 1. 1."/>
+  </material>
+  <material name="hand_green">
+    <color rgba="0. 1. 0. 1."/>
+  </material>
+  <material name="hand_yellow">
+    <color rgba="1. 1. 0. 1."/>
+  </material>
+  <material name="hand_purple">
+    <color rgba="1. 0. 1. 1."/>
+  </material>
+  <material name="hand_grey">
+    <color rgba="0.5 0.5 0.5 1. "/>
+  </material>
+  <material name="hand_turquoise">
+    <color rgba="0. 1. 1. 1."/>
+  </material>
+</robot>
